@@ -11,10 +11,17 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-   TextEditingController _controller = TextEditingController();
+   late final TextEditingController _controller;
+
+   @override
+  void initState() {
+     _controller = TextEditingController();
+    super.initState();
+  }
+
    String name ="";
 
-   void _clearText(){
+   void _clearText() {
      _controller.clear();
      setState(() {
        name= "";
